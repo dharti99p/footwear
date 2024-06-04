@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create SubMenu</title>
+    <style>
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        /* Form container */
+        .form-container {
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        /* Form styles */
+        .form-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        .form-container input[type="text"],
+        .form-container select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Form container -->
+    <div class="form-container">
+        <h2>Create SubMenu</h2>
+        <form method="post" action="#">
+            <!-- CSRF token (required for security) -->
+            {% csrf_token %}
+
+            <!-- Name input -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <!-- URL input -->
+            <label for="url">URL:</label>
+            <input type="text" id="url" name="url" required>
+
+            <!-- MenuForm selection -->
+            <label for="menu_form">Menu Form:</label>
+            <select id="menu_form" name="menu_form" required>
+                {% for i in menu_forms %}
+                    <option value="{{ i.id }}">{{ i.title }}</option>
+                {% endfor %}
+            </select>
+
+            <!-- Submit button -->
+            <button type="submit">Create SubMenu</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>User Dashboard - Your Website</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Inner CSS for styling the user dashboard -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .user-details,
+        .dashboard-section {
+            padding: 10px 0;
+        }
+
+        .user-details p,
+        .dashboard-section p {
+            margin: 10px 0;
+        }
+
+        .nav-bar {
+            background-color: #007bff;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .nav-bar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        .nav-bar a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation bar -->
+    <div class="nav-bar">
+        <a href="#profile">Profile</a>
+        <a href="#settings">Settings</a>
+        <a href="#logout">Logout</a>
+    </div>
+
+    <!-- Container for the dashboard content -->
+    <div class="container">
+        <h1>Welcome, Username!</h1>
+
+        <!-- User details section -->
+        <div id="profile" class="user-details">
+            <h2>Profile</h2>
+            <p>Email: user@example.com</p>
+            <p>Other details...</p>
+        </div>
+
+        <!-- Dashboard section -->
+        <div id="settings" class="dashboard-section">
+            <h2>Settings</h2>
+            <p>Account settings and preferences go here.</p>
+        </div>
+
+        <!-- Additional sections can be added as needed -->
+
+        <!-- Logout link -->
+        <div id="logout" class="dashboard-section">
+            <h2>Logout</h2>
+            <p><a href="#">Click here to log out</a></p>
+        </div>
+    </div>
+</body>
+
+</html>

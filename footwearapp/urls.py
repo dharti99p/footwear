@@ -1,0 +1,30 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('about/', views.about, name='about'),
+    path('add-to-wishlist/', views.add_to_wishlist, name='add-to-wishlist'),
+    path('admin-dashboard/', views.admin_dashboard, name='admin-dashboard'),
+    path('badge/', views.badge, name='badge'),
+    path('badge-table/', views.badge_table, name='badge-table'),
+    path('badge-edit/<int:id>/', views.badge_edit, name='badge-edit'),
+    path('badge-delete/<int:id>/', views.badge_delete, name='badge-delete'),
+    path('shopping-cart/', views.cart, name='cart'),
+    path('checkout/', views.checkout, name='checkout'),
+    path('contact/', views.contact, name='contact'),
+    path('forgot-password/', views.forgot_password, name='forgot-password'),
+    path('header/', views.header, name='header'),
+    path('index/', views.index, name='index'),
+    path('login/', views.login, name='login'),
+    path('men/', views.men, name='men'),
+    path('menu-form/', views.menu_form, name='menu-form'),
+    path('menu-table/', views.menu_table, name='menu-table'),
+    path('menu_edit/<int:id>/', views.menu_edit, name='menu_edit'),
+    path('menu_delete/<int:id>/', views.menu_delete, name='menu_delete'),
+    path('order-complete/', views.order_complete, name='order-complete'),
+    path('product-detail/', views.product_detail, name='product-detail'),
+    path('register/', views.register, name='register'),
+    path('submenu/', views.submenu, name='submenu'),
+    path('user-dashboard/', views.user_dashboard, name='user-dashboard'),
+    path('women/', views.women, name='women'),
+]
