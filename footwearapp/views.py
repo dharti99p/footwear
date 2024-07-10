@@ -5,7 +5,8 @@ from .models import *
 
 
 def about(request):
-    return render(request, 'about.html')
+    image = About.objects.last()
+    return render(request, 'about.html', {'image': image})
 
 
 def add_to_wishlist(request):

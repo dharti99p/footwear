@@ -11,6 +11,12 @@ class Register(models.Model):
     confirm_password = models.CharField(max_length=100)
 
 
+# about
+class About(models.Model):
+    image = models.ImageField(upload_to=('About/'))
+
+    
+# header
 class MenuForm(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100)

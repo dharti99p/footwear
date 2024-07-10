@@ -11,6 +11,12 @@ class RegisterUser(admin.ModelAdmin):
     list_display = ['username', 'phone_number', 'email', 'password', 'confirm_password']
 
 
+# about
+@admin.register(About)
+class AboutImage(admin.ModelAdmin):
+    list_display = ['image']
+
+# header
 @admin.register(MenuForm)
 class MenuFormEntry(admin.ModelAdmin):
     list_display = ['id', 'title', 'url']
@@ -25,5 +31,4 @@ class SubMenuEntry(admin.ModelAdmin):
 class BadgeMenuEntry(admin.ModelAdmin):
     list_display = ['id', 'badge']
 
-# admin123
 # dharti123
