@@ -16,6 +16,18 @@ class RegisterUser(admin.ModelAdmin):
 class AboutImage(admin.ModelAdmin):
     list_display = ['image']
 
+
+# add_to_wishlist
+@admin.register(ShopMore)
+class AddWishlistEntry(admin.ModelAdmin):
+    list_display = ['image', 'product_name', 'product_price']
+
+
+@admin.register(ProDetail)
+class ProDetailEntry(admin.ModelAdmin):
+    list_display = ['image', 'product_name', 'product_price', 'quantity', 'total']
+
+
 # header
 @admin.register(MenuForm)
 class MenuFormEntry(admin.ModelAdmin):

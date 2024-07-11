@@ -4,13 +4,17 @@ from .models import *
 # Create your views here.
 
 
+# about
 def about(request):
     image = About.objects.last()
     return render(request, 'about.html', {'image': image})
 
 
+# add_to_wishlist
 def add_to_wishlist(request):
-    return render(request, 'add-to-wishlist.html')
+    shopmore = ShopMore.objects.all()
+    pro_detail = ProDetail.objects.all()
+    return render(request, 'add-to-wishlist.html', {'shopmore': shopmore, 'pro_detail': pro_detail})
 
 
 def admin_dashboard(request):
@@ -65,11 +69,45 @@ def badge_delete(request, id):
 
 
 def cart(request):
-    return render(request, 'cart.html')
+    pro_detail = ProDetail.objects.all()
+    shopmore = ShopMore.objects.all()
+    
+    subtotal = sum(i.total for i in pro_detail)
+
+    delivery = 0.00
+    discount = 45.00
+
+    total = subtotal + delivery - discount
+
+    context = {
+        'pro_detail': pro_detail,
+        'shopmore' : shopmore,
+        'subtotal' : subtotal,
+        'delivery' : delivery,
+        'discount' : discount,
+        'total' : total
+        }
+    return render(request, 'cart.html', context)
 
 
 def checkout(request):
-    return render(request, 'checkout.html')
+    pro_detail = ProDetail.objects.all()
+    
+    subtotal = sum(i.total for i in pro_detail)
+
+    delivery = 0.00
+    discount = 45.00
+
+    total = subtotal + delivery - discount
+
+    context = {
+        'pro_detail': pro_detail,
+        'subtotal' : subtotal,
+        'delivery' : delivery,
+        'discount' : discount,
+        'total' : total
+        }
+    return render(request, 'checkout.html', context)
 
 
 def contact(request):

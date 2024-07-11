@@ -135,14 +135,19 @@
 									<h2>Cart Total</h2>
 									<ul>
 										<li>
-											<span>Subtotal</span> <span>$100.00</span>
+											<span>Subtotal</span> <span>${{ subtotal }}</span>
 											<ul>
-												<li><span>1 x Product Name</span> <span>$99.00</span></li>
-												<li><span>1 x Product Name</span> <span>$78.00</span></li>
+												{% for i in pro_detail %}
+												<li>
+													<span>{{ i.quantity}} x {{ i.product_name }}</span> 
+													<span>${{ i.total}}</span>
+												</li>
+												{% endfor %}
 											</ul>
 										</li>
-										<li><span>Shipping</span> <span>$0.00</span></li>
-										<li><span>Order Total</span> <span>$180.00</span></li>
+										<li><span>Shipping</span> <span>${{ delivery }}</span></li>
+										<li><span>Discount</span> <span>${{ discount }}</span></li>
+										<li><span>Order Total</span> <span>${{ total }}</span></li>
 									</ul>
 								</div>
 						   </div>

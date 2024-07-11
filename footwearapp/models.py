@@ -16,6 +16,24 @@ class About(models.Model):
     image = models.ImageField(upload_to=('About/'))
 
     
+# add_to_wishlist
+class ShopMore(models.Model):
+    image = models.ImageField(upload_to=('AddWishlist/'))
+    product_name = models.CharField(max_length=100)
+    product_price = models.CharField(max_length=50)
+
+
+class ProDetail(models.Model):
+    image = models.ImageField(upload_to=('AddWishlist/'))
+    product_name = models.CharField(max_length=100)
+    product_price = models.IntegerField()
+    quantity = models.IntegerField()
+    
+    @property
+    def total(self):
+        return self.product_price * self.quantity
+
+
 # header
 class MenuForm(models.Model):
     id = models.AutoField(primary_key=True)
