@@ -17,18 +17,20 @@
 					<div class="col-sm-12">
 						<h3>Contact Information</h3>
 						<div class="row contact-info-wrap">
+							{% if contactus %}
 							<div class="col-md-3">
-								<p><span><i class="icon-location"></i></span> 198 West 21th Street, <br> Suite 721 New York NY 10016</p>
+								<p><span><i class="icon-location"></i></span> {{ contactus.address }} <br> {{ contactus.cityname_pincode}}</p>
 							</div>
 							<div class="col-md-3">
-								<p><span><i class="icon-phone3"></i></span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+								<p><span><i class="icon-phone3"></i></span> <a href="tel://1234567920">+ {{ contactus.phoneno }}</a></p>
 							</div>
 							<div class="col-md-3">
-								<p><span><i class="icon-paperplane"></i></span> <a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+								<p><span><i class="icon-paperplane"></i></span> <a href="mailto:info@yoursite.com">{{ contactus.email }}</a></p>
 							</div>
 							<div class="col-md-3">
-								<p><span><i class="icon-globe"></i></span> <a href="#">yoursite.com</a></p>
+								<p><span><i class="icon-globe"></i></span> <a href="#">{{ contactus.website }}</a></p>
 							</div>
+							{% endif %}
 						</div>
 					</div>
 				</div>

@@ -28,6 +28,12 @@ class ProDetailEntry(admin.ModelAdmin):
     list_display = ['image', 'product_name', 'product_price', 'quantity', 'total']
 
 
+# contact
+@admin.register(ContactUs)
+class ContactUsEntry(admin.ModelAdmin):
+    list_display = ['address', 'cityname_pincode', 'phoneno', 'email', 'website']
+
+
 # header
 @admin.register(MenuForm)
 class MenuFormEntry(admin.ModelAdmin):

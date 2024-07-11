@@ -34,6 +34,15 @@ class ProDetail(models.Model):
         return self.product_price * self.quantity
 
 
+# contact
+class ContactUs(models.Model):
+    address = models.CharField(max_length=50)
+    cityname_pincode = models.CharField(max_length=50)
+    phoneno = models.CharField(max_length=50)
+    email = models.EmailField(max_length=254)
+    website = models.CharField(max_length=50)
+ 
+
 # header
 class MenuForm(models.Model):
     id = models.AutoField(primary_key=True)

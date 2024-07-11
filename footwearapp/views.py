@@ -111,7 +111,12 @@ def checkout(request):
 
 
 def contact(request):
-    return render(request, 'contact.html')
+    contactus = ContactUs.objects.last()
+
+    context = {
+        'contactus' : contactus
+    }
+    return render(request, 'contact.html', context)
 
 
 def forgot_password(request):
